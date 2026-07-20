@@ -1,0 +1,464 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Santeri Rantanen | Mechanical Engineer &amp; Quantum Technology</title>
+  <meta name="description" content="Portfolio of Santeri Rantanen — Mechanical Engineer specializing in sheet metal design, medical devices, and quantum technology measurement infrastructure at Bluefors.">
+  <meta name="keywords" content="Mechanical Engineer, Quantum Technology, Bluefors, Sheet Metal Design, CAD, Cryogenics, Finland">
+  <meta name="author" content="Santeri Rantanen">
+
+  <!-- Fonts -->
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800;900&family=JetBrains+Mono:wght@400;500;600&display=swap" rel="stylesheet">
+
+  <!-- Styles -->
+  <link rel="stylesheet" href="style.css">
+
+  <!-- Favicon (SVG inline) -->
+  <link rel="icon" href="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'><text y='.9em' font-size='90'>⚛</text></svg>">
+  
+  <!-- SEO & Open Graph Meta Tags -->
+  <meta property="og:title" content="Santeri Rantanen | Mechanical Engineer">
+  <meta property="og:description" content="Portfolio of Santeri Rantanen. Mechanical Engineer specializing in cryogenics, quantum measurement infrastructure, and robotics.">
+  <meta property="og:type" content="website">
+  <meta property="og:image" content="images/profile.jpg">
+  <meta name="twitter:card" content="summary_large_image">
+</head>
+<body>
+
+  <!-- ==================== NAVIGATION ==================== -->
+  <nav class="navbar" id="navbar">
+    <div class="navbar-inner">
+      <a href="#hero" class="nav-logo">
+        <span class="logo-mark">SR</span>
+        Santeri Rantanen
+      </a>
+
+      <ul class="nav-links" id="nav-links">
+        <li><a href="#about">About</a></li>
+        <li><a href="#experience">Experience</a></li>
+        <li><a href="#skills">Skills</a></li>
+        <li><a href="#portfolio">Portfolio</a></li>
+        <li><a href="projects.html">Projects</a></li>
+        <li><a href="#interests">Interests</a></li>
+        <li><a href="#contact">Contact</a></li>
+      </ul>
+
+      <div class="nav-actions">
+        <button id="theme-toggle" class="theme-toggle" aria-label="Toggle Dark/Light Mode">
+          <svg class="sun-icon" xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="5"></circle><line x1="12" y1="1" x2="12" y2="3"></line><line x1="12" y1="21" x2="12" y2="23"></line><line x1="4.22" y1="4.22" x2="5.64" y2="5.64"></line><line x1="18.36" y1="18.36" x2="19.78" y2="19.78"></line><line x1="1" y1="12" x2="3" y2="12"></line><line x1="21" y1="12" x2="23" y2="12"></line><line x1="4.22" y1="19.78" x2="5.64" y2="18.36"></line><line x1="18.36" y1="4.22" x2="19.78" y2="5.64"></line></svg>
+          <svg class="moon-icon" xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M21 12.79A9 9 0 1 1 11.21 3 7 7 0 0 0 21 12.79z"></path></svg>
+        </button>
+
+        <button class="nav-toggle" id="nav-toggle" aria-label="Toggle navigation">
+          <span></span>
+          <span></span>
+          <span></span>
+        </button>
+      </div>
+    </div>
+  </nav>
+
+  <!-- ==================== HERO ==================== -->
+  <section class="hero" id="hero">
+    <canvas id="hero-canvas" class="hero-canvas"></canvas>
+    <img src="images/quantum-hero.png" alt="" class="hero-bg-image" aria-hidden="true">
+    <div class="hero-gradient-overlay"></div>
+
+    <div class="hero-content">
+      <p class="hero-tag">Mechanical Engineer · Quantum Technology</p>
+      <h1 class="hero-name">
+        Santeri<br>
+        <span class="gradient-text">Rantanen</span>
+      </h1>
+      <p class="hero-subtitle">
+        From precision sheet metal to the absolute zero frontier —
+        designing measurement infrastructure for quantum computing at Bluefors.
+      </p>
+      <div class="hero-cta-group">
+        <a href="#experience" class="btn btn-primary">
+          <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M22 16.92v3a2 2 0 0 1-2.18 2 19.79 19.79 0 0 1-8.63-3.07 19.5 19.5 0 0 1-6-6 19.79 19.79 0 0 1-3.07-8.67A2 2 0 0 1 4.11 2h3a2 2 0 0 1 2 1.72 12.84 12.84 0 0 0 .7 2.81 2 2 0 0 1-.45 2.11L8.09 9.91a16 16 0 0 0 6 6l1.27-1.27a2 2 0 0 1 2.11-.45 12.84 12.84 0 0 0 2.81.7A2 2 0 0 1 22 16.92z"/></svg>
+          View My Journey
+        </a>
+        <a href="resume.pdf" target="_blank" class="btn btn-secondary">
+          <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M21 15v4a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2v-4"></path><polyline points="7 10 12 15 17 10"></polyline><line x1="12" y1="15" x2="12" y2="3"></line></svg>
+          Download CV
+        </a>
+      </div>
+    </div>
+
+    <div class="scroll-indicator">
+      <span>Scroll</span>
+      <div class="arrow"></div>
+    </div>
+  </section>
+
+  <!-- ==================== ABOUT ==================== -->
+  <section class="about" id="about">
+    <div class="container">
+      <div class="about-grid">
+
+        <div class="about-visual reveal">
+          <div class="about-image-frame">
+            <div class="about-avatar">
+              <img src="images/profile.jpg" alt="Santeri Rantanen" style="filter: brightness(0.75);">
+            </div>
+          </div>
+          <div class="about-floating-badge">
+            <div class="badge-number" data-count="8" data-suffix="+">0+</div>
+            <div class="badge-label">Years of Experience</div>
+          </div>
+        </div>
+
+        <div class="about-text">
+          <span class="section-label reveal">About Me</span>
+          <h2 class="section-title reveal reveal-delay-1">
+            Engineering the future,<br>
+            <span class="gradient-text">from metal to quantum.</span>
+          </h2>
+          <p class="reveal reveal-delay-2">
+            I'm a Finnish mechanical engineer with a versatile career spanning heavy industrial machinery, precision medical devices, and cutting-edge quantum technology. My journey has taken me through some of Finland's most respected engineering companies — from Kone's elevators to Bluefors' dilution refrigerators.
+          </p>
+          <p class="reveal reveal-delay-3">
+            Today, I work at Bluefors on the measurement infrastructure team, helping build the physical framework that enables quantum computing research. My days involve designing components that operate near absolute zero — where classical physics gives way to quantum mechanics.
+          </p>
+          <p class="reveal reveal-delay-3">
+            Outside engineering, I'm passionate about robotics and photography — two fields that combine technical precision with creative expression.
+          </p>
+
+          <div class="about-stats reveal reveal-delay-4">
+            <div class="stat-card">
+              <div class="stat-value" data-count="10" data-suffix="">0</div>
+              <div class="stat-label">Companies</div>
+            </div>
+            <div class="stat-card">
+              <div class="stat-value" data-count="8" data-suffix="">0</div>
+              <div class="stat-label">Industries</div>
+            </div>
+            <div class="stat-card">
+              <div class="stat-value">∞</div>
+              <div class="stat-label">Curiosity</div>
+            </div>
+          </div>
+          
+          <div class="about-actions reveal reveal-delay-4" style="margin-top: 32px;">
+            <a href="resume.pdf" target="_blank" class="btn btn-primary">Download Resume (PDF)</a>
+          </div>
+        </div>
+
+      </div>
+    </div>
+  </section>
+
+  <!-- ==================== EXPERIENCE ==================== -->
+  <section class="experience" id="experience">
+    <div class="container">
+      <span class="section-label reveal">Career Timeline</span>
+      <h2 class="section-title reveal reveal-delay-1">
+        Building across <span class="gradient-text">industries.</span>
+      </h2>
+      <p class="section-subtitle reveal reveal-delay-2">
+        A decade of mechanical engineering across heavy industry, medical technology, and quantum computing.
+      </p>
+
+      <div class="timeline">
+
+        <!-- Bluefors Oy -->
+        <div class="timeline-item reveal">
+          <div class="timeline-content">
+            <span class="timeline-period">Feb 2026 – Present</span>
+            <h3 class="timeline-company">Bluefors Oy</h3>
+            <p class="timeline-role">Mechanical Engineer</p>
+            <p class="timeline-desc">
+              Productisation and customisation for new High Density Amplifier Array product. Working at the cutting edge of cryogenic measurement infrastructure.
+            </p>
+            <div class="timeline-tags">
+              <span class="timeline-tag">Cryogenics</span>
+              <span class="timeline-tag">Productisation</span>
+              <span class="timeline-tag">Customisation</span>
+            </div>
+          </div>
+          <div class="timeline-dot"></div>
+          <div style="flex:1"></div>
+        </div>
+
+        <!-- Huld Oy -->
+        <div class="timeline-item reveal">
+          <div style="flex:1"></div>
+          <div class="timeline-dot"></div>
+          <div class="timeline-content">
+            <span class="timeline-period">Jan 2023 – Feb 2026</span>
+            <h3 class="timeline-company">Huld Oy</h3>
+            <p class="timeline-role">Design Engineer</p>
+            <p class="timeline-desc">
+              Consulting engineering across diverse industry projects:<br><br>
+              <strong>Metso:</strong> Designed flotation tank assemblies, streamlined product dev by standardizing components, and optimized master models.<br>
+              <strong>K. Hartwall:</strong> Productised parcel sorting shelves for Amazon sorting centers and redesigned lifting/lowering mechanisms.<br>
+              <strong>Avant Tecno Oy:</strong> Data validation in Windchill PLM and component organization in E3/SolidWorks.<br>
+              <strong>Revenio/iCare:</strong> Designed 3D-printed base for tonometer lab prototype and air pressure piping.<br>
+              <strong>Oceanvolt Oy:</strong> Redesigned SP25 propulsion system leg for single-piece machining.<br>
+              <strong>Kone Oyj:</strong> Developed elevator sling parts and assemblies.
+            </p>
+            <div class="timeline-tags">
+              <span class="timeline-tag">Consulting</span>
+              <span class="timeline-tag">CAD/PLM</span>
+              <span class="timeline-tag">Mechanical Design</span>
+            </div>
+          </div>
+        </div>
+
+        <!-- Pemamek Oy -->
+        <div class="timeline-item reveal">
+          <div class="timeline-content">
+            <span class="timeline-period">Dec 2021 – Dec 2022</span>
+            <h3 class="timeline-company">Pemamek Oy</h3>
+            <p class="timeline-role">Design Engineer</p>
+            <p class="timeline-desc">
+              Mechanical design of welding automation equipment. Created 3D models, designed large steel structures, and performed FEM structural analysis to ensure robust manufacturing solutions.
+            </p>
+            <div class="timeline-tags">
+              <span class="timeline-tag">Welding Automation</span>
+              <span class="timeline-tag">Steel Structures</span>
+              <span class="timeline-tag">FEM Analysis</span>
+            </div>
+          </div>
+          <div class="timeline-dot"></div>
+          <div style="flex:1"></div>
+        </div>
+
+        <!-- ABB Oy -->
+        <div class="timeline-item reveal">
+          <div style="flex:1"></div>
+          <div class="timeline-dot"></div>
+          <div class="timeline-content">
+            <span class="timeline-period">June 2018 – Nov 2021</span>
+            <h3 class="timeline-company">ABB Oy</h3>
+            <p class="timeline-role">Design Engineer</p>
+            <p class="timeline-desc">
+              Created induction motor 2D layouts and manufacturing drawings using AutoCAD and Siemens NX, including customer-specific designs. Also managed an ECHA project to classify all chemicals used in existing machine products.
+            </p>
+            <div class="timeline-tags">
+              <span class="timeline-tag">Induction Motors</span>
+              <span class="timeline-tag">AutoCAD & NX</span>
+              <span class="timeline-tag">Chemical Compliance</span>
+            </div>
+          </div>
+        </div>
+
+      </div>
+    </div>
+  </section>
+
+  <!-- ==================== SKILLS ==================== -->
+  <section class="skills" id="skills">
+    <div class="container">
+      <span class="section-label reveal">Technical Expertise</span>
+      <h2 class="section-title reveal reveal-delay-1">
+        Skills &amp; <span class="gradient-text">competencies.</span>
+      </h2>
+      <p class="section-subtitle reveal reveal-delay-2">
+        A broad engineering toolkit refined through diverse industry experience.
+      </p>
+
+      <div class="skills-chart-container reveal" style="max-width: 700px; margin: 0 auto; background: var(--surface-color); border: 1px solid var(--border-color); border-radius: 20px; padding: 20px; box-shadow: 0 10px 30px rgba(0,0,0,0.3); backdrop-filter: blur(10px); -webkit-backdrop-filter: blur(10px);">
+        <canvas id="skillsRadarChart"></canvas>
+      </div>
+
+      <!-- Skill Modal (Hidden by default, shown on click) -->
+      <div id="skill-modal" class="skill-modal">
+        <div class="skill-modal-content">
+          <span class="skill-modal-close" id="skill-modal-close">&times;</span>
+          <h3 id="skill-detail-title" class="gradient-text" style="margin-bottom: 25px; font-family: var(--font-mono); font-size: 1.8rem; border-bottom: 1px solid var(--border-color); padding-bottom: 10px;">Skill Category</h3>
+          <ul id="skill-detail-list" class="skill-detail-list">
+            <!-- Populated by JS -->
+          </ul>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ==================== PORTFOLIO (3D MODEL) ==================== -->
+  <section class="portfolio" id="portfolio">
+    <div class="container">
+      <span class="section-label reveal">Engineering Portfolio</span>
+      <h2 class="section-title reveal reveal-delay-1">
+        Interactive <span class="gradient-text">3D Design.</span>
+      </h2>
+      <p class="section-subtitle reveal reveal-delay-2">
+        Explore a conceptual mechanical design of a Dilution Refrigerator Mixing Chamber Flange, modeled in WebGL. Drag to rotate, scroll to zoom.
+      </p>
+
+      <div class="portfolio-grid reveal reveal-delay-3">
+        <div class="model-container" id="model-container">
+          <!-- Three.js Canvas will be injected here -->
+          <div class="model-loading">Initializing WebGL Engine...</div>
+          
+          <div class="model-nav-buttons">
+            <button class="model-btn active" data-target="full">Full System View</button>
+            <button class="model-btn" data-target="rt">RT & 50K Flanges</button>
+            <button class="model-btn" data-target="still">4K & Still Plates</button>
+            <button class="model-btn" data-target="mc">Mixing Chamber</button>
+          </div>
+
+          <div class="model-overlay">
+            <h3 class="model-title">Mixing Chamber Flange</h3>
+            <p class="model-desc">Material: Gold-plated OFHC Copper. Temp: 10 mK.</p>
+          </div>
+        </div>
+        
+        <div class="portfolio-details">
+          <h3>Cryogenic Precision</h3>
+          <p>This interactive component represents the core of a dilution refrigerator where the mixing of He-3 and He-4 isotopes achieves millikelvin temperatures.</p>
+          <ul class="portfolio-features">
+            <li><strong>Material Selection:</strong> High thermal conductivity copper.</li>
+            <li><strong>Thermal Anchoring:</strong> Critical for qubit wiring.</li>
+            <li><strong>Vacuum Integrity:</strong> Leak-tight at absolute zero.</li>
+          </ul>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ==================== INTERESTS ==================== -->
+  <section class="interests" id="interests">
+    <div class="container">
+      <span class="section-label reveal">Beyond Engineering</span>
+      <h2 class="section-title reveal reveal-delay-1">
+        Passions &amp; <span class="gradient-text">interests.</span>
+      </h2>
+      <p class="section-subtitle reveal reveal-delay-2">
+        Engineering precision meets creative exploration.
+      </p>
+
+      <div class="interests-grid">
+
+        <a href="robotics.html" class="interest-card reveal reveal-delay-1 page-transition-link">
+          <img src="images/robotics.png" alt="Robotics — robotic arm in moody lighting">
+          <div class="interest-overlay">
+            <div class="interest-icon">🤖</div>
+            <h3 class="interest-title">Robotics</h3>
+            <p class="interest-desc">
+              Fascinated by the intersection of mechanical engineering and autonomous systems. From industrial robot arms to hobby projects, robotics represents the next frontier of engineering creativity.
+            </p>
+          </div>
+        </a>
+
+        <a href="photography.html" class="interest-card reveal reveal-delay-2 page-transition-link">
+          <img src="images/photography.png" alt="Photography — camera with artistic lighting">
+          <div class="interest-overlay">
+            <div class="interest-icon">📷</div>
+            <h3 class="interest-title">Photography</h3>
+            <p class="interest-desc">
+              Capturing the world through a lens — from Finnish landscapes to architectural details. Photography trains the eye for composition and precision, skills that translate directly into engineering work.
+            </p>
+          </div>
+        </a>
+
+      </div>
+    </div>
+  </section>
+
+  <!-- ==================== CONTACT ==================== -->
+  <section class="contact" id="contact">
+    <div class="container">
+      <span class="section-label reveal">Get In Touch</span>
+      <h2 class="section-title reveal reveal-delay-1">
+        Let's <span class="gradient-text">connect.</span>
+      </h2>
+
+      <div class="contact-wrapper">
+
+        <div class="contact-info reveal reveal-delay-2">
+          <h3>Open to new opportunities and collaborations.</h3>
+          <p>
+            Whether you have a question about quantum technology, want to discuss a mechanical engineering challenge, or just want to connect — I'd love to hear from you.
+          </p>
+
+          <div class="contact-links">
+            <div class="contact-link-item">
+              <div class="contact-link-icon">
+                <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="var(--accent-cyan)" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M4 4h16c1.1 0 2 .9 2 2v12c0 1.1-.9 2-2 2H4c-1.1 0-2-.9-2-2V6c0-1.1.9-2 2-2z"/><polyline points="22,6 12,13 2,6"/></svg>
+              </div>
+              <div>
+                <div class="contact-link-label">Email</div>
+                <a href="mailto:santeri.rantanen@outlook.com" class="contact-link-value hover-link">santeri.rantanen@outlook.com</a>
+              </div>
+            </div>
+
+            <div class="contact-link-item">
+              <div class="contact-link-icon">
+                <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="var(--accent-cyan)" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M16 8a6 6 0 0 1 6 6v7h-4v-7a2 2 0 0 0-2-2 2 2 0 0 0-2 2v7h-4v-7a6 6 0 0 1 6-6z"/><rect x="2" y="9" width="4" height="12"/><circle cx="4" cy="4" r="2"/></svg>
+              </div>
+              <div>
+                <div class="contact-link-label">LinkedIn</div>
+                <a href="https://www.linkedin.com/in/santerirantanen/" target="_blank" class="contact-link-value hover-link">linkedin.com/in/santerirantanen</a>
+              </div>
+            </div>
+
+            <div class="contact-link-item">
+              <div class="contact-link-icon">
+                <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="var(--accent-cyan)" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><rect x="2" y="2" width="20" height="20" rx="5" ry="5"></rect><path d="M16 11.37A4 4 0 1 1 12.63 8 4 4 0 0 1 16 11.37z"></path><line x1="17.5" y1="6.5" x2="17.51" y2="6.5"></line></svg>
+              </div>
+              <div>
+                <div class="contact-link-label">Instagram</div>
+                <a href="https://www.instagram.com/santtujuhana/?hl=en" target="_blank" class="contact-link-value hover-link">@santtujuhana</a>
+              </div>
+            </div>
+
+            <div class="contact-link-item">
+              <div class="contact-link-icon">
+                <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="var(--accent-cyan)" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M21 10c0 7-9 13-9 13s-9-6-9-13a9 9 0 0 1 18 0z"/><circle cx="12" cy="10" r="3"/></svg>
+              </div>
+              <div>
+                <div class="contact-link-label">Location</div>
+                <div class="contact-link-value">Finland 🇫🇮</div>
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <form class="contact-form reveal reveal-delay-3" id="contact-form">
+          <div class="form-group">
+            <label for="contact-name">Name</label>
+            <input type="text" id="contact-name" placeholder="Your name" required>
+          </div>
+          <div class="form-group">
+            <label for="contact-email">Email</label>
+            <input type="email" id="contact-email" placeholder="your@email.com" required>
+          </div>
+          <div class="form-group">
+            <label for="contact-message">Message</label>
+            <textarea id="contact-message" placeholder="Your message..." required></textarea>
+          </div>
+          <button type="submit" class="btn btn-primary" style="width:100%; justify-content:center;">
+            <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><line x1="22" y1="2" x2="11" y2="13"/><polygon points="22 2 15 22 11 13 2 9 22 2"/></svg>
+            Send Message
+          </button>
+        </form>
+
+      </div>
+    </div>
+  </section>
+
+  <!-- ==================== FOOTER ==================== -->
+  <footer class="footer">
+    <div class="footer-inner">
+      <span class="footer-text">© 2026 Santeri Rantanen. Crafted with precision.</span>
+      <div class="footer-links">
+        <a href="#hero">Top ↑</a>
+        <a href="#about">About</a>
+        <a href="#experience">Experience</a>
+        <a href="#contact">Contact</a>
+      </div>
+    </div>
+  </footer>
+
+  <!-- Scripts -->
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/three.js/r128/three.min.js"></script>
+  <script src="https://cdn.jsdelivr.net/npm/three@0.128.0/examples/js/controls/OrbitControls.js"></script>
+  <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+  <script src="script.js"></script>
+</body>
+</html>

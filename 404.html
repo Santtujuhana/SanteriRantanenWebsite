@@ -1,0 +1,62 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>404 | Superposition State</title>
+  
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;600;800&family=Space+Mono:ital,wght@0,400;0,700;1,400&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="style.css">
+  
+  <!-- SEO & Open Graph Meta Tags -->
+  <meta property="og:title" content="404 Error">
+  <meta property="og:description" content="Page not found.">
+  <meta property="og:type" content="website">
+  <meta property="og:image" content="images/profile.jpg">
+  <meta name="twitter:card" content="summary_large_image">
+</head>
+<body class="subpage subpage-entrance">
+
+  <!-- ==================== NAVIGATION ==================== -->
+  <nav class="navbar" id="navbar">
+    <div class="navbar-inner container">
+      <a href="index.html" class="nav-logo">
+        <span class="gradient-text">SR</span>
+      </a>
+      <ul class="nav-links" id="nav-links">
+        <li><a href="index.html#about">About</a></li>
+        <li><a href="index.html#experience">Experience</a></li>
+        <li><a href="index.html#skills">Skills</a></li>
+        <li><a href="projects.html">Projects</a></li>
+        <li><a href="index.html#contact">Contact</a></li>
+        <li><button class="theme-toggle" id="theme-toggle" aria-label="Toggle Theme">
+          <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><circle cx="12" cy="12" r="5"></circle><line x1="12" y1="1" x2="12" y2="3"></line><line x1="12" y1="21" x2="12" y2="23"></line><line x1="4.22" y1="4.22" x2="5.64" y2="5.64"></line><line x1="18.36" y1="18.36" x2="19.78" y2="19.78"></line><line x1="1" y1="12" x2="3" y2="12"></line><line x1="21" y1="12" x2="23" y2="12"></line><line x1="4.22" y1="19.78" x2="5.64" y2="18.36"></line><line x1="18.36" y1="5.64" x2="19.78" y2="4.22"></line></svg>
+        </button></li>
+      </ul>
+    </div>
+  </nav>
+
+  <!-- ==================== HEADER ==================== -->
+  <header class="hero" style="min-height: 100vh; display: flex; align-items: center; justify-content: center; position: relative;">
+    <div class="hero-canvas" id="quantum-canvas"></div>
+    <div class="container hero-content" style="text-align: center; z-index: 10;">
+      <h1 class="hero-title reveal" style="font-size: 8rem; margin-bottom: 0;">
+        <span class="gradient-text glitch-effect" data-text="404">404</span>
+      </h1>
+      <p class="hero-subtitle reveal reveal-delay-1" style="margin: 20px auto 40px; font-family: var(--font-mono); color: var(--accent-cyan);">
+        Observation Error: This page is currently in a superposition state. It both exists and does not exist.
+      </p>
+      
+      <div class="hero-cta-group reveal reveal-delay-2" style="justify-content: center;">
+        <a href="index.html" class="btn btn-primary" style="font-family: var(--font-mono); text-transform: uppercase; letter-spacing: 1px;">
+          Collapse Wave Function
+        </a>
+      </div>
+    </div>
+  </header>
+
+  <script src="script.js"></script>
+</body>
+</html>

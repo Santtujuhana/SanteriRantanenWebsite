@@ -1,0 +1,106 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Robotics | Santeri Rantanen</title>
+  
+  <!-- Fonts -->
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800;900&family=JetBrains+Mono:wght@400;500;600&display=swap" rel="stylesheet">
+  
+  <!-- Styles -->
+  <link rel="stylesheet" href="style.css">
+  
+  <!-- SEO & Open Graph Meta Tags -->
+  <meta property="og:title" content="Santeri Rantanen | Robotics & 3D">
+  <meta property="og:description" content="Interactive 3D industrial robot models and robotics engineering portfolio.">
+  <meta property="og:type" content="website">
+  <meta property="og:image" content="images/profile.jpg">
+  <meta name="twitter:card" content="summary_large_image">
+</head>
+<body class="subpage subpage-entrance">
+
+  <a href="index.html#interests" class="back-link">
+    <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><line x1="19" y1="12" x2="5" y2="12"></line><polyline points="12 19 5 12 12 5"></polyline></svg>
+    Back to Home
+  </a>
+
+  <!-- HERO -->
+  <header class="subpage-hero">
+    <div class="hero-content">
+      <h1 class="gradient-text">Robotics</h1>
+      <p>Exploring the intersection of mechanical engineering and autonomous systems. From industrial arms to planetary rovers, robotics represents the ultimate synergy of hardware and logic.</p>
+    </div>
+  </header>
+
+  <!-- 3D ROBOT MODEL -->
+  <section class="portfolio" style="padding-top: 40px; padding-bottom: 40px;">
+    <div class="container">
+      <h2 class="section-title reveal">Interactive <span class="gradient-text">Industrial Robot.</span></h2>
+      <p class="section-subtitle reveal">A 6-axis articulated robotic arm designed in WebGL. Drag to rotate the camera.</p>
+      
+      <div class="portfolio-grid reveal">
+        <div class="model-container" id="robot-model-container">
+          <div class="model-loading">Initializing Robotics Engine...</div>
+          
+          <div class="model-nav-buttons" style="z-index: 20;">
+            <button class="model-btn active" id="btn-reset">Reset Position</button>
+            <button class="model-btn" id="btn-base">Rotate Base</button>
+            <button class="model-btn" id="btn-reach">Reach Forward</button>
+            <button class="model-btn" id="btn-scan">Scan Mode</button>
+          </div>
+          
+          <div class="model-overlay">
+            <h3 class="model-title">Articulated 6-Axis Arm</h3>
+            <p class="model-desc">Simulated kinematics and joint hierarchy.</p>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- GALLERY -->
+  <section class="gallery-section">
+    <div class="gallery-grid">
+      
+      <div class="gallery-item">
+        <img src="images/robotics-humanoid.png" alt="Humanoid Robot">
+        <div class="gallery-overlay">
+          <h3 class="gallery-title">Next-Gen Humanoids</h3>
+          <p class="gallery-desc">Conceptual design for biomechanical android systems.</p>
+        </div>
+      </div>
+      
+      <div class="gallery-item">
+        <img src="images/robotics-hand.png" alt="Robotic Hand">
+        <div class="gallery-overlay">
+          <h3 class="gallery-title">Precision Actuation</h3>
+          <p class="gallery-desc">Micro-servos and delicate gripping mechanisms.</p>
+        </div>
+      </div>
+      
+      <div class="gallery-item">
+        <img src="images/robotics-rover.png" alt="Mars Rover">
+        <div class="gallery-overlay">
+          <h3 class="gallery-title">Planetary Exploration</h3>
+          <p class="gallery-desc">Rugged mechanical design for extraterrestrial environments.</p>
+        </div>
+      </div>
+
+    </div>
+  </section>
+
+  <footer class="footer">
+    <div class="footer-inner">
+      <span class="footer-text">© 2026 Santeri Rantanen. Crafted with precision.</span>
+    </div>
+  </footer>
+  <!-- Scripts -->
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/three.js/r128/three.min.js"></script>
+  <script src="https://cdn.jsdelivr.net/npm/three@0.128.0/examples/js/controls/OrbitControls.js"></script>
+  <script src="script.js"></script>
+  <script src="robotics-3d.js"></script>
+</body>
+</html>
