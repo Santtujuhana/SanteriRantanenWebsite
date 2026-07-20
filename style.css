@@ -1148,20 +1148,23 @@ img {
   .nav-links {
     position: fixed;
     top: 0;
-    right: -100%;
+    right: 0;
+    transform: translateX(100%);
     width: 280px;
     height: 100vh;
     background: rgba(10, 14, 30, 0.97);
     backdrop-filter: var(--glass-blur);
+    -webkit-backdrop-filter: var(--glass-blur);
     flex-direction: column;
     justify-content: center;
     padding: 40px;
     gap: 24px;
-    transition: right var(--transition-smooth);
+    transition: transform 0.4s cubic-bezier(0.175, 0.885, 0.32, 1.275);
+    z-index: 999;
   }
 
   .nav-links.active {
-    right: 0;
+    transform: translateX(0);
   }
 
   .nav-links a {
@@ -1170,6 +1173,8 @@ img {
 
   .nav-toggle {
     display: flex;
+    z-index: 1000;
+    position: relative;
   }
 
   .hero-name {
