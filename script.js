@@ -610,18 +610,8 @@ function initSmoothScroll() {
    CONTACT FORM (unchanged)
    ============================================ */
 function initContactForm() {
-  const form = document.getElementById('contact-form');
-  if (!form) return;
-  form.addEventListener('submit', e => {
-    e.preventDefault();
-    const btn = form.querySelector('.btn-primary');
-    const orig = btn.textContent;
-    btn.textContent = 'Measured! |1⟩ ✓';
-    btn.style.background = 'linear-gradient(135deg, #10b981, #059669)';
-    setTimeout(() => { btn.textContent = orig; btn.style.background = ''; form.reset(); }, 3000);
-  });
+  // Let FormSubmit.co handle the native form submission.
 }
-
 /* ============================================
    COUNTER ANIMATION (unchanged)
    ============================================ */
