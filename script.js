@@ -27,6 +27,7 @@ document.addEventListener('DOMContentLoaded', () => {
   initCustomCursor();
   initLightbox();
   initRadarChart();
+  initMobileMenu();
 });
 
 /* ============================================

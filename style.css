@@ -2448,9 +2448,6 @@ canvas {
     flex-direction: column !important;
   }
 
-  .nav-links {
-    display: none; /* In a real app we'd add a hamburger menu, but for now we simplify */
-  }
 
   .timeline-container::before {
     left: 20px;
