@@ -411,18 +411,22 @@
           </div>
         </div>
 
-        <form class="contact-form reveal reveal-delay-3" id="contact-form">
+        <form class="contact-form reveal reveal-delay-3" id="contact-form" action="https://formsubmit.co/santeri.rantanen@outlook.com" method="POST">
+          <!-- FormSubmit Configuration -->
+          <input type="hidden" name="_subject" value="New message from Portfolio Website!">
+          <input type="hidden" name="_next" value="https://Santtujuhana.github.io/SanteriRantanenWebsite/">
+          
           <div class="form-group">
             <label for="contact-name">Name</label>
-            <input type="text" id="contact-name" placeholder="Your name" required>
+            <input type="text" name="name" id="contact-name" placeholder="Your name" required>
           </div>
           <div class="form-group">
             <label for="contact-email">Email</label>
-            <input type="email" id="contact-email" placeholder="your@email.com" required>
+            <input type="email" name="email" id="contact-email" placeholder="your@email.com" required>
           </div>
           <div class="form-group">
             <label for="contact-message">Message</label>
-            <textarea id="contact-message" placeholder="Your message..." required></textarea>
+            <textarea name="message" id="contact-message" placeholder="Your message..." required></textarea>
           </div>
           <button type="submit" class="btn btn-primary" style="width:100%; justify-content:center;">
             <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><line x1="22" y1="2" x2="11" y2="13"/><polygon points="22 2 15 22 11 13 2 9 22 2"/></svg>
