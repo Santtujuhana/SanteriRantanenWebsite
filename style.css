@@ -292,6 +292,7 @@ img {
   background: var(--text-primary);
   border-radius: 2px;
   transition: all var(--transition-fast);
+  pointer-events: none;
 }
 
 .nav-toggle.active span:nth-child(1) {

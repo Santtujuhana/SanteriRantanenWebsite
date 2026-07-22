@@ -524,7 +524,9 @@ function initMobileMenu() {
   const navLinks = document.querySelector('.nav-links');
   if (!toggle) return;
 
-  toggle.addEventListener('click', () => {
+  toggle.addEventListener('click', (e) => {
+    e.preventDefault();
+    e.stopPropagation();
     toggle.classList.toggle('active');
     navLinks.classList.toggle('active');
     document.body.style.overflow = navLinks.classList.contains('active') ? 'hidden' : '';
