@@ -5,17 +5,24 @@
 
 document.addEventListener('DOMContentLoaded', () => {
   // --- CORE UI (Must never fail) ---
+  try { initNavbar(); } catch (e) { console.error(e); }
   try { initMobileMenu(); } catch (e) { console.error('Menu error:', e); }
   try { initThemeToggle(); } catch (e) { console.error('Theme error:', e); }
   try { initPageTransitions(); } catch (e) { console.error('Transition error:', e); }
+  try { initSmoothScroll(); } catch (e) { console.error(e); }
+  try { initScrollReveal(); } catch (e) { console.error(e); }
+  try { initContactForm(); } catch (e) { console.error(e); }
 
   // --- VISUAL EFFECTS ---
   try { initCustomCursor(); } catch (e) { console.error(e); }
   try { initLightbox(); } catch (e) { console.error(e); }
   try { initWaveDividers(); } catch (e) { console.error(e); }
   try { initScanLine(); } catch (e) { console.error(e); }
+  try { animateCounters(); } catch (e) { console.error(e); }
+  try { initSkillBars(); } catch (e) { console.error(e); }
 
   // --- QUANTUM / CRYO EFFECTS ---
+  try { initQuantumField(); } catch (e) { console.error(e); }
   try { initQuantumScramble(); } catch (e) { console.error(e); }
   try { initFloatingSymbols(); } catch (e) { console.error(e); }
   try { initMeasurementRipple(); } catch (e) { console.error(e); }
