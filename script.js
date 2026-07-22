@@ -4,30 +4,29 @@
    ============================================ */
 
 document.addEventListener('DOMContentLoaded', () => {
-  initQuantumField();
-  initNavbar();
-  initMobileMenu();
-  initScrollReveal();
-  initSkillBars();
-  initSmoothScroll();
-  initContactForm();
-  animateCounters();
-  initQuantumScramble();
-  initFloatingSymbols();
-  initMeasurementRipple();
-  initWaveDividers();
-  initScanLine();
-  initQuantumGlitch();
-  initCryoTempIndicator();
-  initFrostParticles();
-  initCryostatViz();
-  initPageTransitions();
-  initThemeToggle();
-  init3DModel();
-  initCustomCursor();
-  initLightbox();
-  initRadarChart();
-  initMobileMenu();
+  // --- CORE UI (Must never fail) ---
+  try { initMobileMenu(); } catch (e) { console.error('Menu error:', e); }
+  try { initThemeToggle(); } catch (e) { console.error('Theme error:', e); }
+  try { initPageTransitions(); } catch (e) { console.error('Transition error:', e); }
+
+  // --- VISUAL EFFECTS ---
+  try { initCustomCursor(); } catch (e) { console.error(e); }
+  try { initLightbox(); } catch (e) { console.error(e); }
+  try { initWaveDividers(); } catch (e) { console.error(e); }
+  try { initScanLine(); } catch (e) { console.error(e); }
+
+  // --- QUANTUM / CRYO EFFECTS ---
+  try { initQuantumScramble(); } catch (e) { console.error(e); }
+  try { initFloatingSymbols(); } catch (e) { console.error(e); }
+  try { initMeasurementRipple(); } catch (e) { console.error(e); }
+  try { initQuantumGlitch(); } catch (e) { console.error(e); }
+  try { initCryoTempIndicator(); } catch (e) { console.error(e); }
+  try { initFrostParticles(); } catch (e) { console.error(e); }
+  try { initCryostatViz(); } catch (e) { console.error(e); }
+
+  // --- HEAVY LIBRARIES (May fail if CDN blocked) ---
+  try { init3DModel(); } catch (e) { console.error('3D error:', e); }
+  try { initRadarChart(); } catch (e) { console.error('Chart error:', e); }
 });
 
 /* ============================================
