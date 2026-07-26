@@ -619,7 +619,56 @@ function initSmoothScroll() {
    CONTACT FORM (unchanged)
    ============================================ */
 function initContactForm() {
-  // Let FormSubmit.co handle the native form submission.
+  const form = document.getElementById('contact-form');
+  if (!form) return;
+  
+  const status = form.querySelector('.form-status');
+  const button = form.querySelector('.btn-submit');
+  const btnText = button.querySelector('.btn-text');
+  
+  form.addEventListener('submit', function (event) {
+    event.preventDefault();
+    if (!form.reportValidity()) return;
+    
+    // Gather payload
+    const payload = {
+      name: form.name.value.trim(),
+      email: form.email.value.trim(),
+      message: form.message.value.trim(),
+      _honey: form._honey.value
+    };
+    
+    button.disabled = true;
+    btnText.textContent = button.dataset.sending;
+    status.hidden = true;
+    
+    fetch(form.action, {
+      method: 'POST',
+      headers: { 
+        'Content-Type': 'application/json',
+        'Accept': 'application/json'
+      },
+      body: JSON.stringify(payload)
+    })
+    .then(res => {
+      if (!res.ok) throw new Error('HTTP ' + res.status);
+      
+      // Hide all form inputs and button
+      form.querySelectorAll('.form-group, .btn-submit').forEach(el => el.style.display = 'none');
+      
+      status.textContent = status.dataset.success;
+      status.style.color = 'var(--accent-cyan)';
+      status.hidden = false;
+    })
+    .catch(err => {
+      console.error(err);
+      status.textContent = status.dataset.error;
+      status.style.color = '#ff6b6b';
+      status.hidden = false;
+      button.disabled = false;
+      btnText.textContent = button.dataset.label;
+    });
+  });
 }
 /* ============================================
    COUNTER ANIMATION (unchanged)
