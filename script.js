@@ -14,7 +14,6 @@ document.addEventListener('DOMContentLoaded', () => {
   try { initContactForm(); } catch (e) { console.error(e); }
 
   // --- VISUAL EFFECTS ---
-  try { initCustomCursor(); } catch (e) { console.error(e); }
   try { initLightbox(); } catch (e) { console.error(e); }
   try { initWaveDividers(); } catch (e) { console.error(e); }
   try { initScanLine(); } catch (e) { console.error(e); }
@@ -1248,39 +1247,6 @@ function init3DModel() {
   });
 }
 
-/* ============================================
-   SURPRISE FEATURE: CUSTOM CURSOR
-   ============================================ */
-function initCustomCursor() {
-  if (window.matchMedia("(pointer: coarse)").matches) return;
-
-  const cursor = document.createElement('div');
-  cursor.className = 'custom-cursor';
-  document.body.appendChild(cursor);
-
-  document.addEventListener('mousemove', (e) => {
-    // Using left/top avoids conflicting with CSS transform animations (like spin)
-    cursor.style.left = `${e.clientX}px`;
-    cursor.style.top = `${e.clientY}px`;
-  });
-
-  const interactables = document.querySelectorAll('a, button, .gallery-item');
-  interactables.forEach(el => {
-    el.addEventListener('mouseenter', () => cursor.classList.add('hovering'));
-    el.addEventListener('mouseleave', () => cursor.classList.remove('hovering'));
-  });
-
-  document.addEventListener('click', (e) => {
-    const ripple = document.createElement('div');
-    ripple.className = 'custom-cursor-ripple';
-    // Position ripple exactly at click coordinates
-    ripple.style.left = `${e.clientX}px`;
-    ripple.style.top = `${e.clientY}px`;
-    document.body.appendChild(ripple);
-    
-    setTimeout(() => ripple.remove(), 600);
-  });
-}
 
 /* ============================================
    LIGHTBOX MODAL
