@@ -509,16 +509,34 @@ function initNavbar() {
   const links = document.querySelectorAll('.nav-links a');
   const sections = document.querySelectorAll('section[id]');
 
-  window.addEventListener('scroll', () => {
-    const scrollY = window.scrollY;
-    navbar.classList.toggle('scrolled', scrollY > 50);
+  let sectionData = [];
+  function updateSectionData() {
+    sectionData = Array.from(sections).map(s => ({
+      id: s.id,
+      top: s.offsetTop - 120
+    }));
+  }
+  // Initialize and update on resize to avoid layout thrashing on scroll
+  updateSectionData();
+  window.addEventListener('resize', updateSectionData, { passive: true });
 
-    let current = '';
-    sections.forEach(s => { if (scrollY >= s.offsetTop - 120) current = s.id; });
-    links.forEach(l => {
-      l.classList.toggle('active', l.getAttribute('href') === `#${current}`);
-    });
-  });
+  let ticking = false;
+  window.addEventListener('scroll', () => {
+    if (!ticking) {
+      window.requestAnimationFrame(() => {
+        const scrollY = window.scrollY;
+        navbar.classList.toggle('scrolled', scrollY > 50);
+
+        let current = '';
+        sectionData.forEach(s => { if (scrollY >= s.top) current = s.id; });
+        links.forEach(l => {
+          l.classList.toggle('active', l.getAttribute('href') === `#${current}`);
+        });
+        ticking = false;
+      });
+      ticking = true;
+    }
+  }, { passive: true });
 }
 
 /* ============================================
@@ -729,8 +747,12 @@ function initCryoTempIndicator() {
   const unitEl = indicator.querySelector('.cryo-temp-unit');
   const stages = indicator.querySelectorAll('.cryo-stage');
 
+  let maxScroll = Math.max(1, document.body.scrollHeight - window.innerHeight);
+  window.addEventListener('resize', () => {
+    maxScroll = Math.max(1, document.body.scrollHeight - window.innerHeight);
+  }, { passive: true });
+
   function update() {
-    const maxScroll = document.body.scrollHeight - window.innerHeight;
     const progress = Math.min(1, Math.max(0, window.scrollY / maxScroll));
 
     // Fill the cooling track
@@ -754,7 +776,16 @@ function initCryoTempIndicator() {
     });
   }
 
-  window.addEventListener('scroll', update, { passive: true });
+  let ticking = false;
+  window.addEventListener('scroll', () => {
+    if (!ticking) {
+      window.requestAnimationFrame(() => {
+        update();
+        ticking = false;
+      });
+      ticking = true;
+    }
+  }, { passive: true });
   update();
 }
 
