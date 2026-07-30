@@ -626,7 +626,7 @@ function initSmoothScroll() {
             overlay.classList.remove('frost-active');
             overlay.classList.add('frost-shatter');
           }, 50);
-        }, 500); // Wait 500ms for frost to build up
+        }, 250); // Wait 250ms for frost to build up
       }
     });
   });
