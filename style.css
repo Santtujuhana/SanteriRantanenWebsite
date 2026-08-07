@@ -6,12 +6,12 @@
 /* --- CSS Custom Properties (Design Tokens) --- */
 :root {
   /* --- Dark Theme (Default) --- */
-  --bg-color: #06060f;
-  --surface-color: rgba(255, 255, 255, 0.03);
-  --surface-color-hover: rgba(255, 255, 255, 0.08);
-  --text-primary: #f8fafc;
-  --text-secondary: #94a3b8;
-  --border-color: rgba(255, 255, 255, 0.1);
+  --bg-color: #0A0A0A;
+  --surface-color: rgba(255, 255, 255, 0.02);
+  --surface-color-hover: rgba(255, 255, 255, 0.06);
+  --text-primary: #F5F5F7;
+  --text-secondary: #86868B;
+  --border-color: rgba(255, 255, 255, 0.08);
   --accent-cyan: #00d4ff;
   --accent-violet: #7c3aed;
   --gradient-primary: linear-gradient(135deg, var(--accent-cyan), var(--accent-violet));
@@ -343,11 +343,9 @@ img {
 
 .hero-gradient-overlay {
   position: absolute;
-  bottom: 0;
-  left: 0;
-  right: 0;
-  height: 40%;
-  background: var(--gradient-hero);
+  inset: 0;
+  background: radial-gradient(circle at top right, rgba(0, 212, 255, 0.05), transparent 50%),
+              radial-gradient(circle at bottom left, rgba(124, 58, 237, 0.05), transparent 50%);
   z-index: 1;
 }
 
@@ -1217,191 +1215,7 @@ img {
   }
 }
 
-/* ============================================
-   QUANTUM EFFECTS
-   ============================================ */
-
-/* --- Floating Quantum Symbols --- */
-.quantum-symbols-layer {
-  position: fixed;
-  inset: 0;
-  pointer-events: none;
-  z-index: 0;
-  overflow: hidden;
-}
-
-.quantum-float-symbol {
-  position: absolute;
-  font-family: var(--font-mono);
-  color: var(--accent-cyan);
-  animation: quantum-drift linear infinite;
-  pointer-events: none;
-  user-select: none;
-  will-change: transform;
-}
-
-@keyframes quantum-drift {
-  0%   { transform: translate(0, 0) rotate(0deg) scale(1); }
-  20%  { transform: translate(18px, -25px) rotate(6deg) scale(1.05); }
-  40%  { transform: translate(-12px, 15px) rotate(-4deg) scale(0.95); }
-  60%  { transform: translate(25px, 10px) rotate(8deg) scale(1.08); }
-  80%  { transform: translate(-8px, -18px) rotate(-3deg) scale(0.97); }
-  100% { transform: translate(0, 0) rotate(0deg) scale(1); }
-}
-
-/* --- Measurement Ripple --- */
-.quantum-ripple {
-  position: fixed;
-  pointer-events: none;
-  z-index: 9999;
-}
-
-.quantum-ripple-ring {
-  position: absolute;
-  width: 0;
-  height: 0;
-  border-radius: 50%;
-  border: 2px solid rgba(0, 212, 255, 0.6);
-  transform: translate(-50%, -50%);
-  animation: ripple-expand 1.2s ease-out forwards;
-}
-
-.quantum-ripple-ring:nth-child(2) {
-  border-color: rgba(124, 58, 237, 0.5);
-}
-
-.quantum-ripple-ring:nth-child(3) {
-  border-color: rgba(180, 130, 255, 0.3);
-}
-
-@keyframes ripple-expand {
-  0% {
-    width: 0;
-    height: 0;
-    opacity: 1;
-    border-width: 2px;
-  }
-  60% {
-    opacity: 0.5;
-  }
-  100% {
-    width: 240px;
-    height: 240px;
-    opacity: 0;
-    border-width: 0.5px;
-  }
-}
-
-.quantum-ripple-state {
-  position: absolute;
-  transform: translate(-50%, -50%);
-  font-family: var(--font-mono);
-  font-size: 0.9rem;
-  font-weight: 600;
-  color: var(--accent-cyan);
-  text-shadow: 0 0 12px rgba(0, 212, 255, 0.5);
-  animation: state-readout 1.2s ease-out forwards;
-  white-space: nowrap;
-}
-
-@keyframes state-readout {
-  0% {
-    opacity: 0;
-    transform: translate(-50%, -50%) scale(1.5);
-    filter: blur(4px);
-  }
-  20% {
-    opacity: 1;
-    transform: translate(-50%, -50%) scale(1);
-    filter: blur(0);
-  }
-  70% {
-    opacity: 0.8;
-    transform: translate(-50%, calc(-50% - 20px)) scale(1);
-  }
-  100% {
-    opacity: 0;
-    transform: translate(-50%, calc(-50% - 40px)) scale(0.7);
-  }
-}
-
-/* --- Wave Function Dividers --- */
-.wave-divider {
-  position: relative;
-  height: 50px;
-  overflow: hidden;
-  pointer-events: none;
-  z-index: 1;
-}
-
-.wave-divider svg {
-  width: 100%;
-  height: 100%;
-}
-
-.wave-path {
-  vector-effect: non-scaling-stroke;
-}
-
-/* --- Energy Scan Line --- */
-.quantum-scan-line {
-  position: fixed;
-  left: 0;
-  right: 0;
-  height: 1px;
-  background: linear-gradient(
-    90deg,
-    transparent 0%,
-    rgba(0, 212, 255, 0.05) 15%,
-    rgba(0, 212, 255, 0.18) 40%,
-    rgba(124, 58, 237, 0.12) 60%,
-    rgba(0, 212, 255, 0.05) 85%,
-    transparent 100%
-  );
-  box-shadow: 0 0 8px rgba(0, 212, 255, 0.1), 0 0 20px rgba(0, 212, 255, 0.05);
-  animation: scan-sweep 10s ease-in-out infinite;
-  pointer-events: none;
-  z-index: 1;
-}
-
-@keyframes scan-sweep {
-  0%   { top: -2px;     opacity: 0; }
-  5%   { opacity: 1; }
-  95%  { opacity: 1; }
-  100% { top: 100vh;    opacity: 0; }
-}
-
-/* --- Quantum Glitch on Titles --- */
-.quantum-glitch-target {
-  position: relative;
-}
-
-.quantum-glitching {
-  animation: q-glitch 0.2s steps(2) forwards;
-}
-
-@keyframes q-glitch {
-  0% {
-    text-shadow: 2px 0 var(--accent-cyan), -2px 0 var(--accent-violet);
-    transform: translate(0);
-  }
-  25% {
-    text-shadow: -2px 1px var(--accent-cyan), 2px -1px var(--accent-violet);
-    transform: translate(-1px, 1px);
-  }
-  50% {
-    text-shadow: 1px -1px var(--accent-violet), -1px 1px var(--accent-cyan);
-    transform: translate(1px, -1px);
-  }
-  75% {
-    text-shadow: -1px 0 var(--accent-cyan), 1px 0 var(--accent-violet);
-    transform: translate(-1px, 0);
-  }
-  100% {
-    text-shadow: none;
-    transform: translate(0);
-  }
-}
+/* Removed heavy quantum effects to streamline the aesthetic */
 
 /* --- Enhanced Timeline Dots — Qubit Pulse --- */
 .timeline-dot {
@@ -1456,27 +1270,7 @@ img {
   100% { background-position: -250% 0; }
 }
 
-/* --- Quantum Circuit Grid Background --- */
-.experience,
-.skills {
-  overflow: hidden;
-}
 
-.experience::after,
-.skills::after {
-  content: '';
-  position: absolute;
-  inset: 0;
-  background-image:
-    linear-gradient(rgba(0, 212, 255, 0.025) 1px, transparent 1px),
-    linear-gradient(90deg, rgba(0, 212, 255, 0.025) 1px, transparent 1px);
-  background-size: 64px 64px;
-  mask-image: radial-gradient(ellipse 70% 60% at 50% 50%, black 20%, transparent 70%);
-  -webkit-mask-image: radial-gradient(ellipse 70% 60% at 50% 50%, black 20%, transparent 70%);
-  pointer-events: none;
-  z-index: 0;
-  animation: grid-drift 20s linear infinite;
-}
 
 @keyframes grid-drift {
   0%   { background-position: 0 0; }
@@ -1790,16 +1584,7 @@ img {
   margin-top: 4px;
 }
 
-/* --- Frost Particle Canvas --- */
-.frost-canvas {
-  position: fixed;
-  top: 0;
-  left: 0;
-  width: 100%;
-  height: 100%;
-  pointer-events: none;
-  z-index: 2;
-}
+
 
 /* --- Cryostat Visualization in Hero --- */
 .cryostat-viz {

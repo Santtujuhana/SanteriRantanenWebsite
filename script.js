@@ -4,34 +4,19 @@
    ============================================ */
 
 document.addEventListener('DOMContentLoaded', () => {
-  // --- CORE UI (Must never fail) ---
+  // --- CORE UI ---
   try { initNavbar(); } catch (e) { console.error(e); }
   try { initMobileMenu(); } catch (e) { console.error('Menu error:', e); }
   try { initThemeToggle(); } catch (e) { console.error('Theme error:', e); }
-  try { initPageTransitions(); } catch (e) { console.error('Transition error:', e); }
   try { initSmoothScroll(); } catch (e) { console.error(e); }
   try { initScrollReveal(); } catch (e) { console.error(e); }
   try { initContactForm(); } catch (e) { console.error(e); }
 
-  // --- VISUAL EFFECTS ---
+  // --- COMPONENT INIT ---
   try { initLightbox(); } catch (e) { console.error(e); }
-  try { initWaveDividers(); } catch (e) { console.error(e); }
-  try { initScanLine(); } catch (e) { console.error(e); }
   try { animateCounters(); } catch (e) { console.error(e); }
   try { initSkillBars(); } catch (e) { console.error(e); }
-
-  // --- QUANTUM / CRYO EFFECTS ---
-  try { initQuantumField(); } catch (e) { console.error(e); }
-  try { initQuantumScramble(); } catch (e) { console.error(e); }
-  try { initFloatingSymbols(); } catch (e) { console.error(e); }
-  try { initMeasurementRipple(); } catch (e) { console.error(e); }
-  try { initQuantumGlitch(); } catch (e) { console.error(e); }
   try { initCryoTempIndicator(); } catch (e) { console.error(e); }
-  try { initFrostParticles(); } catch (e) { console.error(e); }
-  try { initCryostatViz(); } catch (e) { console.error(e); }
-
-  // --- HEAVY LIBRARIES (May fail if CDN blocked) ---
-  try { init3DModel(); } catch (e) { console.error('3D error:', e); }
   try { initRadarChart(); } catch (e) { console.error('Chart error:', e); }
 });
 
@@ -596,15 +581,10 @@ function initSkillBars() {
    FROSTY NAV SCROLL
    ============================================ */
 function initSmoothScroll() {
-  const overlay = document.createElement('div');
-  overlay.className = 'frost-transition-overlay';
-  document.body.appendChild(overlay);
-
   document.querySelectorAll('a[href^="#"]').forEach(link => {
     link.addEventListener('click', e => {
       const targetId = link.getAttribute('href');
       if (targetId === '#' || targetId === '#hero') {
-        // Just smooth scroll for top links
         e.preventDefault();
         window.scrollTo({ top: 0, behavior: 'smooth' });
         return;
@@ -613,20 +593,7 @@ function initSmoothScroll() {
       const target = document.querySelector(targetId);
       if (target) {
         e.preventDefault();
-        
-        // 1. Freeze screen
-        overlay.classList.remove('frost-shatter');
-        overlay.classList.add('frost-active');
-        
-        // 2. Wait for freeze, then jump & shatter
-        setTimeout(() => {
-          target.scrollIntoView({ behavior: 'instant' });
-          
-          setTimeout(() => {
-            overlay.classList.remove('frost-active');
-            overlay.classList.add('frost-shatter');
-          }, 50);
-        }, 250); // Wait 250ms for frost to build up
+        target.scrollIntoView({ behavior: 'smooth' });
       }
     });
   });
